@@ -5,7 +5,7 @@
 package exemplos.imagem;
 
 import aljava.Alj;
-import util.ContadorTempo;
+import aljava.util.ContadorTempo;
 import aljava.midia.Gif;
 import aljava.midia.Imagem;
 
