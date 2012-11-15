@@ -5,7 +5,7 @@ import aljava.Alj;
 public class Main {
 
     public static void main(String args[]) {
-        Alj.tela.tamanho(320, 320);
+        Alj.inicializa(320, 320);        
 
         //Usa as teclas default
         JoystickTeclado j1 = new JoystickTeclado();

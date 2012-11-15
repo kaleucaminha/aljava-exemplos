@@ -16,7 +16,7 @@ public class JogoDaVelha {
     public JogoDaVelha() {
         carregaSons();
 
-        Alj.tela.tamanho(300, 340);
+        Alj.inicializa(300, 340);
         vezDoJogador1 = true;
 
         jogador1 = Alj.tela.solicitaTexto("Informe seu nome jogador 1.");
@@ -79,21 +79,24 @@ public class JogoDaVelha {
     }
 
     public void verificaVitoria(){
-        //Vitória 1a Linha Horizontal
-        if(casas[0].estaOcupadaPlayer1() && casas[1].estaOcupadaPlayer1() && casas[2].estaOcupadaPlayer1()){
+        verificaVitoriaPorCasinhas(0, 1, 2);
+        verificaVitoriaPorCasinhas(3, 4, 5);
+        verificaVitoriaPorCasinhas(6, 7, 8);
+
+        verificaVitoriaPorCasinhas(0, 3, 6);
+        verificaVitoriaPorCasinhas(1, 4, 7);
+        verificaVitoriaPorCasinhas(2, 5, 8);
+
+        verificaVitoriaPorCasinhas(0, 4, 8);
+        verificaVitoriaPorCasinhas(2, 4, 6);
+    }
+
+    public void verificaVitoriaPorCasinhas(int c1, int c2, int c3){
+        if(casas[c1].estaOcupadaPlayer1() && casas[c2].estaOcupadaPlayer1() && casas[c3].estaOcupadaPlayer1()){
             vitoriaPlayer1();
         }
 
-        if(casas[0].estaOcupadaPlayer2() && casas[1].estaOcupadaPlayer2() && casas[2].estaOcupadaPlayer2()){
-            vitoriaPlayer2();
-        }
-
-        //Vitória 2a Linha Horizontal
-        if(casas[3].estaOcupadaPlayer1() && casas[4].estaOcupadaPlayer1() && casas[5].estaOcupadaPlayer1()){
-            vitoriaPlayer1();
-        }
-
-        if(casas[3].estaOcupadaPlayer2() && casas[4].estaOcupadaPlayer2() && casas[5].estaOcupadaPlayer2()){
+        if(casas[c1].estaOcupadaPlayer2() && casas[c2].estaOcupadaPlayer2() && casas[c3].estaOcupadaPlayer2()){
             vitoriaPlayer2();
         }
     }
